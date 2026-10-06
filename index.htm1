@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اطلاعات پرداخت</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 30px 15px;
+      text-align: center;
+    }
+
+    .card {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.1);
+    }
+
+    h1 {
+      margin-bottom: 25px;
+    }
+
+    .number {
+      font-size: 22px;
+      font-weight: bold;
+      direction: ltr;
+      margin: 20px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #111;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <h1>اطلاعات پرداخت</h1>
+
+    <div class="number" id="cardNumber">
+      6037-XXXX-XXXX-XXXX
+    </div>
+
+    <button onclick="copyCard()">
+      کپی شماره کارت
+    </button>
+
+    <div id="message"></div>
+
+  </div>
+
+  <script>
+    function copyCard() {
+      const number = document.getElementById("cardNumber").innerText;
+
+      navigator.clipboard.writeText(number).then(function() {
+        document.getElementById("message").innerText =
+          "شماره کارت کپی شد ✓";
+      });
+    }
+  </script>
+
+</body>
+</html>
